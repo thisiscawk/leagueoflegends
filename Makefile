@@ -19,17 +19,17 @@ nop:
 
 install:
 	install -Dm755 leagueoflegends          -t $(bindir)
-	install -Dm644 90-league.conf			-t $(sysctldir)
+#	install -Dm644 90-league.conf			-t $(sysctldir)
 	install -Dm644 leagueoflegends.desktop  -t $(datarootdir)/applications
 	install -Dm644 leagueoflegends.png      -t $(iconsdir)/hicolor/256x256/apps
 	install -Dm644 leagueoflegends.reg      -t $(docdir)
 	install -Dm644 LICENSE                  -t $(licensesdir)
 	install -Dm644 completion.bash             $(bashcompdir)/$(pkgname)
-	pkexec sysctl -p "$(sysctldir)/90-league.conf"
+#	pkexec sysctl -p "$(sysctldir)/90-league.conf"
 
 uninstall:
 	@rm -vf $(bindir)/leagueoflegends
-	@rm -vf $(sysctldir)/90-league.conf
+#	@rm -vf $(sysctldir)/90-league.conf
 	@rm -vf $(datarootdir)/applications/leagueoflegends.desktop
 	@rm -vf $(iconsdir)/hicolor/256x256/apps/leagueoflegends.png
 	@rm -vf $(docdir)/leagueoflegends.reg
